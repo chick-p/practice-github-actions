@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "textlint": "^13.3.3",
+    "textlint-rule-ja-no-mixed-period": "^3.0.1"
+  }
 }
