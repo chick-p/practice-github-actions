@@ -20,5 +20,15 @@ jobs:
 
       - run: |
           pnpm --version
-          cd ./sub
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: './sub/package.json'
+
+      - name: change directory
+        run: cd ./sub
+
+
+
+      - run: |
           pnpm --version
