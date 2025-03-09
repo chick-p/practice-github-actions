@@ -22,6 +22,8 @@ jobs:
       - run: |
           echo ${{ steps.setup-pnpm.outputs.bin_dest }}
           pnpm --version
+          ls -l ${{ steps.setup-pnpm.outputs.bin_dest }}/pnpm
+          cat ~/setup-pnpm/node_modules/pnpm/package.json
 
       - uses: pnpm/action-setup@v4
         id: setup-pnpm-sub
@@ -36,3 +38,5 @@ jobs:
 
       - run: |
           ~/setup-pnpm-sub/node_modules/.bin/pnpm --version
+          ls -l ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm
+          cat ~/setup-pnpm-sub/node_modules/pnpm/package.json
