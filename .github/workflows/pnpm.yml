@@ -31,13 +31,14 @@ jobs:
           package_json_file: './sub/package.json'
           dest: '~/setup-pnpm-sub/'
 
-      - run: |
-          ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm --version
-          ls -l ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm
-          cat ~/setup-pnpm-sub/node_modules/pnpm/package.json
+      # - run: |
+      #     ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm --version
+      #     ls -l ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm
+      #     cat ~/setup-pnpm-sub/node_modules/pnpm/package.json
 
       - name: change directory
         run: |
-          echo ${{ steps.setup-pnpm-sub.outputs.bin_dest }}
+          # echo ${{ steps.setup-pnpm-sub.outputs.bin_dest }}
           cd ./sub
+          ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm --version
           ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm install
