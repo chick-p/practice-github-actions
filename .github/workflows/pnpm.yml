@@ -43,3 +43,7 @@ jobs:
           cd ./sub
           ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm --version
           ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm install
+      - name: check directory
+        run: |
+          pwd
+          ${{ steps.setup-pnpm.outputs.bin_dest }}/pnpm --version
