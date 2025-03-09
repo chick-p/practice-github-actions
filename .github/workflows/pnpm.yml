@@ -37,6 +37,6 @@ jobs:
           cd ./sub
 
       - run: |
-          ~/setup-pnpm-sub/node_modules/.bin/pnpm --version
+          ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm --version
           ls -l ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm
-          cat ~/setup-pnpm-sub/node_modules/pnpm/package.json
+          cat ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm/package.json
