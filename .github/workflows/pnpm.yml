@@ -22,12 +22,15 @@ jobs:
           pnpm --version
 
       - uses: pnpm/action-setup@v4
+        id: setup-pnpm-sub
         with:
           package_json_file: './sub/package.json'
           dest: '~/setup-pnpm-sub/'
 
       - name: change directory
-        run: cd ./sub
+        run: |
+          echo ${{ steps.setup-pnpm-sub.outputs.dest_bin }}
+          cd ./sub
 
       - run: |
           ~/setup-pnpm-sub/node_modules/.bin/pnpm --version
