@@ -23,11 +23,12 @@ jobs:
           echo ${{ steps.setup-pnpm.outputs.bin_dest }}
           pnpm --version
           ls -l ${{ steps.setup-pnpm.outputs.bin_dest }}/pnpm
-          cat ~/setup-pnpm/node_modules/pnpm/package.json
+          # cat ~/setup-pnpm/node_modules/pnpm/package.json
 
       - uses: pnpm/action-setup@v4
         id: setup-pnpm-sub
         with:
+          # version: 10
           package_json_file: './sub/package.json'
           dest: '~/setup-pnpm-sub/'
 
@@ -38,7 +39,7 @@ jobs:
 
       - name: change directory
         run: |
-          # echo ${{ steps.setup-pnpm-sub.outputs.bin_dest }}
+          ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm --version
           cd ./sub
           ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm --version
           ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm install
