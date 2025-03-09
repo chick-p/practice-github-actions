@@ -29,7 +29,7 @@ jobs:
 
       - name: change directory
         run: |
-          echo ${{ steps.setup-pnpm-sub.outputs.dest_bin }}
+          echo ${{ steps.setup-pnpm-sub.outputs.bin_dest }}
           cd ./sub
 
       - run: |
