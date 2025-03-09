@@ -36,8 +36,8 @@ jobs:
           ls -l ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm
           cat ~/setup-pnpm-sub/node_modules/pnpm/package.json
 
-          - name: change directory
-          run: |
-            echo ${{ steps.setup-pnpm-sub.outputs.bin_dest }}
-            cd ./sub
-            ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm install
+      - name: change directory
+        run: |
+          echo ${{ steps.setup-pnpm-sub.outputs.bin_dest }}
+          cd ./sub
+          ${{ steps.setup-pnpm-sub.outputs.bin_dest }}/pnpm install
