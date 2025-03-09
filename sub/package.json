@@ -4,7 +4,6 @@
   "devDependencies": {
     "textlint": "^13.3.3"
   },
-  "packageManager": "pnpm@10.6.1",
   "engines": {
     "pnpm": "=10.6.1"
   }
