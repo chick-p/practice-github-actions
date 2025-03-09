@@ -17,8 +17,10 @@ jobs:
           node-version: 18
 
       - uses: pnpm/action-setup@v4
+        id: setup-pnpm
 
       - run: |
+          echo ${{ steps.setup-pnpm.outputs.bin_dest }}
           pnpm --version
 
       - uses: pnpm/action-setup@v4
