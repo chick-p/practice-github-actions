@@ -17,7 +17,7 @@ jobs:
           node-version: 18
 
       - uses: pnpm/action-setup@v4
-        with:
-          version: 8
 
-      - run: pnpm install --engine-strict false
+      - run: |
+          pnpm env use 10
+          pnpm install
