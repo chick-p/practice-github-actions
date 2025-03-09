@@ -31,4 +31,4 @@ jobs:
 
 
       - run: |
-          pnpm --version
+          ./node_modules/.bin/pnpm --version
