@@ -24,11 +24,10 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: './sub/package.json'
+          dest: '~/setup-pnpm-sub/'
 
       - name: change directory
         run: cd ./sub
 
-
-
       - run: |
-          ./node_modules/.bin/pnpm --version
+          ~/setup-pnpm-sub/node_modules/.bin/pnpm --version
