@@ -5,3 +5,5 @@ aaaa
 foo
 
 aaa
+
+foo
